@@ -327,8 +327,8 @@ func install(version string, cpuarch string) {
 		}
 
 		// Download node
-		append32 := node.IsVersionInstalled(env.root, version, "64")
-		append64 := node.IsVersionInstalled(env.root, version, "32")
+		append32 := node.IsVersionInstalled(env.root, version, "32")
+		append64 := node.IsVersionInstalled(env.root, version, "64")
 		if (cpuarch == "32" || cpuarch == "all") && !node.IsVersionInstalled(env.root, version, "32") {
 			success := web.GetNodeJS(env.root, version, "32", append32)
 			if !success {
